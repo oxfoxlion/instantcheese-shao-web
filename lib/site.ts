@@ -48,3 +48,28 @@ export const navigation: naviationItem[] = [
         label: "生活紀錄"
     },
 ];
+
+// 社群帳號
+type socialItem = {
+    href: string;
+    label: string;
+}
+
+export const social:socialItem[] = [
+    {
+        href:'',
+        label:'GitHub'
+    },
+    {
+        href:'',
+        label:'Instagram'
+    },
+    {
+        href:'',
+        label:'Threads'
+    },
+    {
+        href:'',
+        label:'YouTube'
+    },
+]
