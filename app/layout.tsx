@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { site } from "@/lib/site";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "邵的前端實驗室 | Shao",
-  description: "邵的前端實驗室，喜歡在這邊放入各種嘗試。",
+  title: site.seo.title,
+  description: site.seo.description,
 };
 
 export default function RootLayout({
@@ -30,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+      </body>
     </html>
   );
 }
