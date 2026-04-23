@@ -16,15 +16,15 @@ export default async function DevNoteLayout({ children, params }: Props) {
 
     return (
         <div className="flex">
-            <aside className="w-1/4">
-                <div>{ category }</div>
-                <ul>
+            <aside className="w-1/4 p-5 border-e-2 border-gray-200">
+                <div className="text-lg font-bold">{ category }</div>
+                <ul className="text-base">
                     {posts.map(post=>(
                         <li key={post.slug}><Link href={post.href}>{post.title}</Link></li>
                     ))}
                 </ul>
             </aside>
-            <main className="3/4">{children}</main>
+            <main className="w-3/4 p-5">{children}</main>
         </div>
     )
 }

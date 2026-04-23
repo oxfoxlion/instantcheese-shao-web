@@ -14,7 +14,7 @@ import { site, navigation } from "@/lib/site"
 
 export default function Header() {
     return (
-        <div className="flex justify-between items-center p-5">
+        <div className="flex justify-between items-center p-5 border-b-2 border-gray-200">
             <Link className="flex items-center gap-2" href="/">
                 <Image
                     src='/instantcheese.jpg'
